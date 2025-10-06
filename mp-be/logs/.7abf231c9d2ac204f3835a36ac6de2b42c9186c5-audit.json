@@ -1,0 +1,45 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/.7abf231c9d2ac204f3835a36ac6de2b42c9186c5-audit.json",
+    "files": [
+        {
+            "date": 1758569248880,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/application-2025-09-22.log",
+            "hash": "4e35c00fc2cae755038b99201ffcbcf47c2b9e2f9ab53ebee6440961658a72cc"
+        },
+        {
+            "date": 1758574966218,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/application-2025-09-23.log",
+            "hash": "63bbbb891f91536b4e7de6465711bb9543d733a9c33051fe56feadd7c9a6ad04"
+        },
+        {
+            "date": 1758987791403,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/application-2025-09-27.log",
+            "hash": "53a5228be337e96d151f5e22d089036eec6664d47328e34ebd32dd188f8e1531"
+        },
+        {
+            "date": 1759090555153,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/application-2025-09-28.log",
+            "hash": "aa14900fcd536c801999c75cebdf10c5bbb91f887d1957097ca8977226e4da07"
+        },
+        {
+            "date": 1759093540348,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/application-2025-09-29.log",
+            "hash": "a0b143ef06b32aa1d7ddf5695fade3b771c3ebcd719d88a0669c10dec239d3c1"
+        },
+        {
+            "date": 1759239095310,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/application-2025-09-30.log",
+            "hash": "f1c695a94ad7fd6b060294b0b1c94405883a90a02ff77ef62b4918e126d5951b"
+        },
+        {
+            "date": 1759576987897,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/application-2025-10-04.log",
+            "hash": "79642871b5848d79aef2f40bc1ad030ed476c1ca935244dfef0cbb53c4fa90ce"
+        }
+    ],
+    "hashType": "sha256"
+}

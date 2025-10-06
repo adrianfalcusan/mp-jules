@@ -1,0 +1,39 @@
+                <Grid item xs={12}>
+                  <Typography variant="subtitle2" sx={{ color: "white", mb: 2, mt: 2 }}>
+                    Lesson Video (Optional)
+                  </Typography>
+                  <input
+                    accept="video/*"
+                    style={{ display: "none" }}
+                    id="lesson-video-upload"
+                    type="file"
+                    onChange={(e) => {
+                      const file = e.target.files[0];
+                      if (file) {
+                        setCurrentLesson(prev => ({ ...prev, videoFile: file }));
+                      }
+                    }}
+                  />
+                  <label htmlFor="lesson-video-upload">
+                    <Button
+                      variant="outlined"
+                      component="span"
+                      startIcon={<VideoIcon />}
+                      sx={{
+                        color: "white",
+                        borderColor: "rgba(255,255,255,0.3)",
+                        "&:hover": {
+                          borderColor: "white",
+                          background: "rgba(255,255,255,0.1)"
+                        }
+                      }}
+                    >
+                      Upload Video
+                    </Button>
+                  </label>
+                  {currentLesson.videoFile && (
+                    <Typography variant="caption" sx={{ color: "green", ml: 2 }}>
+                      ��� {currentLesson.videoFile.name}
+                    </Typography>
+                  )}
+                </Grid>

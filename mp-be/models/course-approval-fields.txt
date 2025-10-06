@@ -1,0 +1,16 @@
+
+// Add approval fields to Course model
+publishedAt: {
+  type: Date,
+},
+isRejected: {
+  type: Boolean,
+  default: false,
+},
+rejectedAt: {
+  type: Date,
+},
+rejectionReason: {
+  type: String,
+  default: '',
+},

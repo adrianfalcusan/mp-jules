@@ -1,0 +1,49 @@
+{
+  "name": "music-platform-backend",
+  "version": "1.0.0",
+  "description": "Backend for the music platform application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:bunny": "node scripts/test-bunny-upload.js",
+    "test:video": "node scripts/test-video-upload.js",
+    "setup:test": "node scripts/setup-test-data.js"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.11.0",
+    "bcryptjs": "^2.x",
+    "bunnycdn-stream": "^2.5.1",
+    "cors": "^2.x",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.x",
+    "express": "^4.x",
+    "express-rate-limit": "^6.x",
+    "fluent-ffmpeg": "^2.1.3",
+    "form-data": "^4.0.4",
+    "helmet": "^6.x",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.x",
+    "mongoose": "^6.x",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.10.1",
+    "sharp": "^0.34.3",
+    "stripe": "^17.5.0",
+    "vimeo": "^2.3.1",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.1.3",
+    "nodemon": "^2.0.22",
+    "supertest": "^7.1.4"
+  }
+}

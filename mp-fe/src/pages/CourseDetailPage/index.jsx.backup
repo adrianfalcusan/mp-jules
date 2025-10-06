@@ -1,0 +1,1091 @@
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Button,
+  Stack,
+  Card,
+  CardContent,
+  Avatar,
+  Chip,
+  Divider,
+  LinearProgress,
+  IconButton,
+  Paper,
+  Breadcrumbs,
+  Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  ListItemButton,
+  Collapse,
+  CircularProgress,
+} from "@mui/material";
+import {
+  PlayArrow as PlayIcon,
+  Pause as PauseIcon,
+  Lock as LockIcon,
+  CheckCircle as CheckIcon,
+  PlayCircle as PlayCircleIcon,
+  School as SchoolIcon,
+  AccessTime as TimeIcon,
+  People as PeopleIcon,
+  Star as StarIcon,
+  Download as DownloadIcon,
+  Share as ShareIcon,
+  Bookmark as BookmarkIcon,
+  ExpandLess,
+  ExpandMore,
+  Home as HomeIcon,
+} from "@mui/icons-material";
+import { motion } from "framer-motion";
+import PropTypes from "prop-types";
+import axios from "axios";
+
+// Components
+import Layout from "../../components/Layout";
+import Spinner from "../../components/Spinner";
+import { designSystem } from "../../theme";
+import ENV from "../../config/environment";
+import PurchaseOverlay from "../../shared/components/PurchaseOverlay";
+import ProgressTrackingVideoPlayer from "../../components/ProgressTrackingVideoPlayer";
+
+function setMeta(name, content) {
+  let tag = document.querySelector(`meta[name="${name}"]`);
+  if (!tag) {
+    tag = document.createElement("meta");
+    tag.setAttribute("name", name);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", content);
+}
+function setOG(property, content) {
+  let tag = document.querySelector(`meta[property="${property}"]`);
+  if (!tag) {
+    tag = document.createElement("meta");
+    tag.setAttribute("property", property);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", content);
+}
+
+// Styled Components
+const PageContainer = ({ children }) => (
+  <Box
+    sx={{
+      minHeight: "100vh",
+      background: `linear-gradient(135deg, ${designSystem.colors.background.primary} 0%, ${designSystem.colors.background.secondary} 100%)`,
+    }}
+  >
+    {children}
+  </Box>
+);
+
+PageContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+const VideoPlayer = ({
+  videoUrl,
+  isEnrolled,
+  onEnroll,
+  courseTitle,
+  thumbnailUrl,
+}) => {
+  const [videoSrc, setVideoSrc] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
+
+  // Handle video URL changes
+  React.useEffect(() => {
+    if (!videoUrl || !isEnrolled) {
+      setVideoSrc(null);
+      setError(null);
+      return;
+    }
+
+    const token = localStorage.getItem("token");
+
+    if (videoUrl.includes("/api/courses/") && token) {
+      // For backend streaming URLs, create a blob URL
+      setIsLoading(true);
+      setError(null);
+
+      fetch(videoUrl, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          }
+          return response.blob();
+        })
+        .then((blob) => {
+          const blobUrl = URL.createObjectURL(blob);
+          setVideoSrc(blobUrl);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.error("Error loading video:", err);
+          setError(err.message);
+          setIsLoading(false);
+        });
+    } else {
+      // For direct URLs, use them as-is
+      setVideoSrc(videoUrl);
+      setIsLoading(false);
+    }
+
+    // Cleanup function to revoke blob URL
+    return () => {
+      if (videoSrc && videoSrc.startsWith("blob:")) {
+        URL.revokeObjectURL(videoSrc);
+      }
+    };
+  }, [videoUrl, isEnrolled]);
+
+  return (
+    <Paper
+      elevation={0}
+      sx={{
+        position: "relative",
+        width: "100%",
+        height: { xs: 250, md: 400 },
+        borderRadius: 2,
+        overflow: "hidden",
+        background: "#000",
+        border: `1px solid ${designSystem.colors.surface.border}`,
+      }}
+    >
+      {isEnrolled && videoUrl ? (
+        <Box sx={{ position: "relative", width: "100%", height: "100%" }}>
+          {isLoading && (
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "rgba(0,0,0,0.8)",
+                zIndex: 2,
+              }}
+            >
+              <Box sx={{ textAlign: "center" }}>
+                <CircularProgress color="primary" size={40} />
+                <Typography variant="body2" sx={{ color: "white", mt: 1 }}>
+                  Loading video...
+                </Typography>
+              </Box>
+            </Box>
+          )}
+
+          {error && (
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "rgba(255,0,0,0.1)",
+                zIndex: 2,
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{ color: "red", textAlign: "center" }}
+              >
+                Error loading video: {error}
+              </Typography>
+            </Box>
+          )}
+
+          <video
+            src={videoSrc}
+            controls
+            crossOrigin="anonymous"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+            poster={thumbnailUrl || "/img/course-fallback.jpg"}
+            onLoadStart={() => {
+              setIsLoading(true);
+            }}
+            onCanPlay={() => {
+              setIsLoading(false);
+            }}
+            onLoadedData={() => {
+              // Video data loaded successfully
+            }}
+            onError={(e) => {
+              console.error("Video error:", e);
+              setError("Failed to load video");
+              setIsLoading(false);
+            }}
+          />
+        </Box>
+      ) : (
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%)",
+            backgroundImage: `url('${thumbnailUrl || "/img/course-fallback.jpg"}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            color: "white",
+          }}
+        >
+          <IconButton
+            onClick={onEnroll}
+            sx={{
+              width: 80,
+              height: 80,
+              background: "rgba(255,255,255,0.2)",
+              backdropFilter: "blur(10px)",
+              border: "2px solid rgba(255,255,255,0.3)",
+              "&:hover": {
+                background: "rgba(255,255,255,0.3)",
+                transform: "scale(1.05)",
+              },
+              transition: "all 0.3s ease",
+            }}
+          >
+            <PlayIcon sx={{ fontSize: 32, color: "white" }} />
+          </IconButton>
+          <Typography variant="h6" sx={{ mt: 2, textAlign: "center" }}>
+            {isEnrolled ? "Loading..." : `Preview ${courseTitle}`}
+          </Typography>
+          {!isEnrolled && (
+            <Typography variant="body2" sx={{ mt: 1, opacity: 0.8 }}>
+              Enroll to access full content
+            </Typography>
+          )}
+        </Box>
+      )}
+    </Paper>
+  );
+};
+
+const CourseHeader = ({ course, isEnrolled }) => (
+  <Box sx={{ mb: 4 }}>
+    <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
+      <Chip
+        label={course?.category || "General"}
+        size="small"
+        sx={{
+          background: designSystem.colors.primary.gradient,
+          color: "white",
+          fontWeight: 600,
+        }}
+      />
+      <Chip
+        label={course?.level || "Beginner"}
+        size="small"
+        variant="outlined"
+        sx={{ textTransform: "capitalize" }}
+      />
+      {isEnrolled && (
+        <Chip
+          label="Enrolled"
+          size="small"
+          color="success"
+          icon={<CheckIcon />}
+        />
+      )}
+    </Stack>
+
+    <Typography
+      variant="h3"
+      component="h1"
+      sx={{
+        fontWeight: 800,
+        color: designSystem.colors.text.primary,
+        mb: 2,
+        fontSize: { xs: "2rem", md: "2.5rem" },
+      }}
+    >
+      {course?.title}
+    </Typography>
+
+    <Typography
+      variant="h6"
+      sx={{
+        color: designSystem.colors.text.secondary,
+        mb: 3,
+        lineHeight: 1.6,
+      }}
+    >
+      {course?.description}
+    </Typography>
+
+    <Stack direction="row" spacing={3} alignItems="center">
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <StarIcon sx={{ color: "#ffc107", fontSize: 20 }} />
+        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+          {course?.averageRating || 0}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          ({course?.reviewCount || 0} reviews)
+        </Typography>
+      </Box>
+
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <PeopleIcon
+          sx={{ color: designSystem.colors.text.muted, fontSize: 20 }}
+        />
+        <Typography variant="body2">
+          {course?.enrollmentCount || 0} students
+        </Typography>
+      </Box>
+
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <TimeIcon
+          sx={{ color: designSystem.colors.text.muted, fontSize: 20 }}
+        />
+        <Typography variant="body2">{course?.duration || 0} minutes</Typography>
+      </Box>
+    </Stack>
+  </Box>
+);
+
+const InstructorCard = ({ instructor }) => (
+  <Card
+    elevation={0}
+    sx={{
+      background: "rgba(255, 255, 255, 0.05)",
+      backdropFilter: "blur(10px)",
+      border: `1px solid ${designSystem.colors.surface.border}`,
+      borderRadius: 2,
+    }}
+  >
+    <CardContent>
+      <Stack direction="row" spacing={2} alignItems="center">
+        <Avatar
+          src={instructor?.avatar}
+          sx={{
+            width: 60,
+            height: 60,
+            background: designSystem.colors.primary.gradient,
+          }}
+        >
+          {instructor?.name?.charAt(0)}
+        </Avatar>
+        <Box>
+          <Typography variant="h6" sx={{ fontWeight: 600 }}>
+            {instructor?.name || "Instructor"}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Music Production Expert
+          </Typography>
+        </Box>
+      </Stack>
+    </CardContent>
+  </Card>
+);
+
+const CourseProgress = ({ progress, currentLesson, totalLessons }) => (
+  <Card
+    elevation={0}
+    sx={{
+      background: "rgba(255, 255, 255, 0.05)",
+      backdropFilter: "blur(10px)",
+      border: `1px solid ${designSystem.colors.surface.border}`,
+      borderRadius: 2,
+      mb: 3,
+    }}
+  >
+    <CardContent>
+      <Stack
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        sx={{ mb: 2 }}
+      >
+        <Typography variant="h6" sx={{ fontWeight: 600 }}>
+          Your Progress
+        </Typography>
+        <Typography variant="h6" color="primary">
+          {Math.round(progress)}%
+        </Typography>
+      </Stack>
+      <LinearProgress
+        variant="determinate"
+        value={progress}
+        sx={{
+          height: 8,
+          borderRadius: 4,
+          background: "rgba(255, 255, 255, 0.1)",
+          "& .MuiLinearProgress-bar": {
+            background: designSystem.colors.primary.gradient,
+            borderRadius: 4,
+          },
+        }}
+      />
+      <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+        Lesson {currentLesson} of {totalLessons}
+      </Typography>
+    </CardContent>
+  </Card>
+);
+
+const LessonsList = ({ lessons, activeIndex, onSelectLesson, isEnrolled }) => {
+  const [expandedModule, setExpandedModule] = useState(0);
+
+  const handleModuleClick = (moduleIndex) => {
+    setExpandedModule(expandedModule === moduleIndex ? -1 : moduleIndex);
+  };
+
+  // Group lessons into modules (every 5 lessons = 1 module)
+  const modules = [];
+  for (let i = 0; i < lessons.length; i += 5) {
+    modules.push({
+      title: `Module ${Math.floor(i / 5) + 1}`,
+      lessons: lessons.slice(i, i + 5),
+      startIndex: i,
+    });
+  }
+
+  return (
+    <Card
+      elevation={0}
+      sx={{
+        background: "rgba(255, 255, 255, 0.05)",
+        backdropFilter: "blur(10px)",
+        border: `1px solid ${designSystem.colors.surface.border}`,
+        borderRadius: 2,
+      }}
+    >
+      <CardContent>
+        <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+          Course Content
+        </Typography>
+
+        <List disablePadding>
+          {modules.map((module, moduleIndex) => (
+            <React.Fragment key={moduleIndex}>
+              <ListItemButton
+                onClick={() => handleModuleClick(moduleIndex)}
+                sx={{
+                  borderRadius: 1,
+                  mb: 1,
+                  background:
+                    expandedModule === moduleIndex
+                      ? "rgba(255, 255, 255, 0.05)"
+                      : "transparent",
+                }}
+              >
+                <ListItemText
+                  primary={module.title}
+                  secondary={`${module.lessons.length} lessons`}
+                />
+                {expandedModule === moduleIndex ? (
+                  <ExpandLess />
+                ) : (
+                  <ExpandMore />
+                )}
+              </ListItemButton>
+
+              <Collapse
+                in={expandedModule === moduleIndex}
+                timeout="auto"
+                unmountOnExit
+              >
+                <List component="div" disablePadding>
+                  {module.lessons.map((lesson, lessonIndex) => {
+                    const globalIndex = module.startIndex + lessonIndex;
+                    const isActive = globalIndex === activeIndex;
+                    const isLocked = !isEnrolled && globalIndex > 0;
+
+                    return (
+                      <ListItem key={globalIndex} disablePadding sx={{ pl: 4 }}>
+                        <ListItemButton
+                          onClick={() =>
+                            !isLocked && onSelectLesson(lesson, globalIndex)
+                          }
+                          disabled={isLocked}
+                          sx={{
+                            borderRadius: 1,
+                            background: isActive
+                              ? designSystem.colors.primary.gradient
+                              : "transparent",
+                            color: isActive ? "white" : "inherit",
+                            "&:hover": {
+                              background: isActive
+                                ? designSystem.colors.primary.gradient
+                                : "rgba(255, 255, 255, 0.05)",
+                            },
+                          }}
+                        >
+                          <ListItemIcon sx={{ minWidth: 40 }}>
+                            {isLocked ? (
+                              <LockIcon
+                                sx={{ color: "text.secondary", fontSize: 20 }}
+                              />
+                            ) : isActive ? (
+                              <PauseIcon
+                                sx={{ color: "white", fontSize: 20 }}
+                              />
+                            ) : (
+                              <PlayIcon
+                                sx={{ color: "text.secondary", fontSize: 20 }}
+                              />
+                            )}
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={lesson.title}
+                            secondary={lesson.duration}
+                            primaryTypographyProps={{
+                              fontWeight: isActive ? 600 : 400,
+                              color: isActive ? "white" : "inherit",
+                            }}
+                            secondaryTypographyProps={{
+                              color: isActive
+                                ? "rgba(255, 255, 255, 0.7)"
+                                : "text.secondary",
+                            }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                    );
+                  })}
+                </List>
+              </Collapse>
+            </React.Fragment>
+          ))}
+        </List>
+      </CardContent>
+    </Card>
+  );
+};
+
+const PurchaseCard = ({ course, isEnrolled, onPurchase, loading }) => {
+  if (isEnrolled) {
+    return (
+      <Card
+        elevation={0}
+        sx={{
+          background: "rgba(76, 175, 80, 0.1)",
+          border: "1px solid rgba(76, 175, 80, 0.3)",
+          borderRadius: 2,
+        }}
+      >
+        <CardContent>
+          <Stack direction="row" alignItems="center" spacing={2}>
+            <CheckIcon sx={{ color: "success.main" }} />
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                Enrolled
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Continue learning
+              </Typography>
+            </Box>
+          </Stack>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <Card
+      elevation={0}
+      sx={{
+        background: "rgba(255, 255, 255, 0.05)",
+        backdropFilter: "blur(10px)",
+        border: `1px solid ${designSystem.colors.surface.border}`,
+        borderRadius: 2,
+      }}
+    >
+      <CardContent>
+        <Stack spacing={3}>
+          <Box>
+            <Typography variant="h4" sx={{ fontWeight: 700 }}>
+              ${course?.price || 0}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              One-time purchase
+            </Typography>
+          </Box>
+
+          <Button
+            variant="contained"
+            size="large"
+            fullWidth
+            onClick={onPurchase}
+            disabled={loading}
+            sx={{
+              background: designSystem.colors.primary.gradient,
+              py: 1.5,
+              fontSize: "1.1rem",
+              fontWeight: 600,
+              "&:hover": {
+                background: designSystem.colors.primary.gradient,
+                transform: "translateY(-1px)",
+              },
+            }}
+          >
+            {loading ? "Processing..." : "Enroll Now"}
+          </Button>
+
+          <Divider />
+
+          <Stack spacing={2}>
+            <Typography variant="body2" sx={{ fontWeight: 600 }}>
+              This course includes:
+            </Typography>
+            <Stack spacing={1}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <PlayCircleIcon sx={{ color: "primary.main", fontSize: 20 }} />
+                <Typography variant="body2">
+                  {course?.videoLinks?.length || 0} video lessons
+                </Typography>
+              </Box>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <DownloadIcon sx={{ color: "primary.main", fontSize: 20 }} />
+                <Typography variant="body2">Downloadable resources</Typography>
+              </Box>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <SchoolIcon sx={{ color: "primary.main", fontSize: 20 }} />
+                <Typography variant="body2">
+                  Certificate of completion
+                </Typography>
+              </Box>
+            </Stack>
+          </Stack>
+        </Stack>
+      </CardContent>
+    </Card>
+  );
+};
+
+const ActionButtons = () => (
+  <Stack direction="row" spacing={2}>
+    <IconButton
+      sx={{
+        border: `1px solid ${designSystem.colors.surface.border}`,
+        borderRadius: 2,
+      }}
+    >
+      <BookmarkIcon />
+    </IconButton>
+    <IconButton
+      sx={{
+        border: `1px solid ${designSystem.colors.surface.border}`,
+        borderRadius: 2,
+      }}
+    >
+      <ShareIcon />
+    </IconButton>
+  </Stack>
+);
+
+// Main Component
+export default function CourseDetailPage() {
+  const { id: courseId } = useParams();
+  const navigate = useNavigate();
+
+  const [state, setState] = useState({
+    course: null,
+    loading: true,
+    error: null,
+    purchasing: false,
+    activeVideoIndex: 0,
+    finishing: false,
+  });
+
+  const [videoLinks, setVideoLinks] = useState([]);
+
+  const { course, loading, error, purchasing, activeVideoIndex, finishing } =
+    state;
+  const isEnrolled = course?.enrolled || course?.purchased;
+
+  const activeVideo = videoLinks[activeVideoIndex];
+
+  const progress =
+    isEnrolled && videoLinks.length > 0
+      ? ((activeVideoIndex + 1) / videoLinks.length) * 100
+      : 0;
+
+  // Transform video links to lesson objects
+  const lessons = videoLinks.map((link, index) => ({
+    url: link,
+    title: `Lesson ${index + 1}`,
+    duration: "5-8 min",
+  }));
+
+  // Fetch course data
+  useEffect(() => {
+    const fetchCourse = async () => {
+      try {
+        setState((prev) => ({ ...prev, loading: true, error: null }));
+
+        const token = localStorage.getItem("token");
+        const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
+        const response = await axios.get(
+          `${ENV.API_BASE_URL}/courses/${courseId}`,
+          { headers }
+        );
+
+        if (response.data.success) {
+          setState((prev) => ({
+            ...prev,
+            course: response.data.course,
+            loading: false,
+          }));
+
+          // If enrolled, fetch video links
+          if (response.data.course.enrolled || response.data.course.purchased) {
+            const videoResponse = await axios.get(
+              `${ENV.API_BASE_URL}/courses/${courseId}/content`,
+              { headers }
+            );
+            if (videoResponse.data.success) {
+              // Use provided signed URLs directly for playback (no auth headers needed)
+              setVideoLinks(videoResponse.data.videoLinks || []);
+            }
+          }
+        } else {
+          setState((prev) => ({
+            ...prev,
+            error: response.data.message || "Failed to fetch course",
+            loading: false,
+          }));
+        }
+      } catch (error) {
+        console.error("Error fetching course:", error);
+        setState((prev) => ({
+          ...prev,
+          error: error.response?.data?.message || "Failed to fetch course",
+          loading: false,
+        }));
+      }
+    };
+
+    if (courseId) {
+      fetchCourse();
+    }
+  }, [courseId]);
+
+  // Post-checkout success handling: poll until enrollment is visible or timeout (with backoff)
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    const success = url.searchParams.get("success");
+    if (!success || !courseId) return;
+
+    setState((prev) => ({ ...prev, finishing: true }));
+
+    let cancelled = false;
+    let attempts = 0;
+    let delay = 1500;
+
+    const token = localStorage.getItem("token");
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+
+    const poll = async () => {
+      attempts += 1;
+      try {
+        const resp = await axios.get(
+          `${ENV.API_BASE_URL}/courses/${courseId}`,
+          { headers }
+        );
+        if (
+          resp.data?.success &&
+          (resp.data.course?.enrolled || resp.data.course?.purchased)
+        ) {
+          if (!cancelled) {
+            setState((prev) => ({
+              ...prev,
+              course: resp.data.course,
+              finishing: false,
+            }));
+            url.searchParams.delete("success");
+            window.history.replaceState({}, "", url.toString());
+            return;
+          }
+        }
+      } catch (e) {
+        // ignore and keep polling a bit
+      }
+      if (!cancelled && attempts < 10) {
+        delay = Math.min(delay * 1.5, 5000);
+        setTimeout(poll, delay);
+      } else {
+        if (!cancelled) setState((prev) => ({ ...prev, finishing: false }));
+      }
+    };
+
+    poll();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [courseId]);
+
+  const handleRestoreAccess = async () => {
+    // manual trigger to refresh course + content
+    const token = localStorage.getItem("token");
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    try {
+      setState((prev) => ({ ...prev, finishing: true }));
+      const resp = await axios.get(`${ENV.API_BASE_URL}/courses/${courseId}`, {
+        headers,
+      });
+      if (resp.data?.success) {
+        setState((prev) => ({ ...prev, course: resp.data.course }));
+        if (resp.data.course?.enrolled || resp.data.course?.purchased) {
+          const videoResponse = await axios.get(
+            `${ENV.API_BASE_URL}/courses/${courseId}/content`,
+            { headers }
+          );
+          if (videoResponse.data.success) {
+            setVideoLinks(videoResponse.data.videoLinks || []);
+          }
+        }
+      }
+    } finally {
+      setState((prev) => ({ ...prev, finishing: false }));
+    }
+  };
+
+  const handlePurchase = async () => {
+    try {
+      setState((prev) => ({ ...prev, purchasing: true }));
+
+      const token = localStorage.getItem("token");
+      if (!token) {
+        navigate("/login");
+        return;
+      }
+
+      const response = await axios.post(
+        `${ENV.API_BASE_URL}/payments/create-session`,
+        {
+          itemId: course._id,
+          itemType: "course",
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      if (response.data.success && response.data.url) {
+        window.location.href = response.data.url;
+      }
+    } catch (error) {
+      console.error("Error creating checkout session:", error);
+    } finally {
+      setState((prev) => ({ ...prev, purchasing: false }));
+    }
+  };
+
+  const handleVideoSelect = (lesson, index) => {
+    setState((prev) => ({ ...prev, activeVideoIndex: index }));
+  };
+
+  if (loading) {
+    return <Spinner />;
+  }
+
+  // Set SEO meta now that course is loaded
+  if (course?.title) {
+    document.title = `${course.title} — Course · MUSICLOUD`;
+    setMeta(
+      "description",
+      (course.description || "Learn with MUSICLOUD").slice(0, 160)
+    );
+    setOG("og:title", `${course.title} — MUSICLOUD`);
+    setOG(
+      "og:description",
+      (course.description || "Music course").slice(0, 160)
+    );
+  }
+
+  if (error) {
+    return (
+      <Layout>
+        <Container maxWidth="lg" sx={{ py: 8 }}>
+          <Typography color="error">{error}</Typography>
+        </Container>
+      </Layout>
+    );
+  }
+
+  return (
+    <PageContainer>
+      <Layout>
+        <PurchaseOverlay
+          open={finishing}
+          text="Finalizing your access..."
+          showRestore={!isEnrolled}
+          onRestore={handleRestoreAccess}
+        />
+        <Container maxWidth="xl" sx={{ py: 4 }}>
+          {/* Breadcrumbs */}
+          <Breadcrumbs sx={{ mb: 4 }}>
+            <Link
+              component="button"
+              onClick={() => navigate("/")}
+              sx={{ display: "flex", alignItems: "center", gap: 1 }}
+            >
+              <HomeIcon fontSize="small" />
+              Home
+            </Link>
+            <Link component="button" onClick={() => navigate("/courses")}>
+              Courses
+            </Link>
+            <Typography color="text.primary">{course?.title}</Typography>
+          </Breadcrumbs>
+
+          {/* Course Header - Full Width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <CourseHeader course={course} isEnrolled={isEnrolled} />
+          </motion.div>
+
+          <Grid container spacing={4}>
+            {/* Main Content */}
+            <Grid item xs={12} lg={8}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                {/* Video Player */}
+                {isEnrolled ? (
+                  <ProgressTrackingVideoPlayer
+                    src={activeVideo}
+                    contentType="course"
+                    contentId={courseId}
+                    onProgressUpdate={() => {}}
+                    style={{
+                      borderRadius: 8,
+                      display: "block",
+                      minHeight: 400,
+                    }}
+                  />
+                ) : (
+                  <VideoPlayer
+                    videoUrl={activeVideo}
+                    isEnrolled={isEnrolled}
+                    onEnroll={handlePurchase}
+                    courseTitle={course?.title}
+                    thumbnailUrl={course?.thumbnailUrl}
+                  />
+                )}
+
+                {/* Progress for enrolled users */}
+                {isEnrolled && lessons.length > 0 && (
+                  <Box sx={{ mt: 3 }}>
+                    <CourseProgress
+                      progress={progress}
+                      currentLesson={activeVideoIndex + 1}
+                      totalLessons={lessons.length}
+                    />
+                  </Box>
+                )}
+
+                {/* Instructor */}
+                <Box sx={{ mt: 4 }}>
+                  <InstructorCard instructor={course?.instructor} />
+                </Box>
+              </motion.div>
+            </Grid>
+
+            {/* Sidebar - Aligned with Video Player */}
+            <Grid item xs={12} lg={4}>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Stack spacing={3}>
+                  {/* Purchase Card */}
+                  <PurchaseCard
+                    course={course}
+                    isEnrolled={isEnrolled}
+                    onPurchase={handlePurchase}
+                    loading={purchasing}
+                  />
+
+                  {/* Action Buttons */}
+                  <ActionButtons />
+
+                  {/* Lessons List */}
+                  {lessons.length > 0 && (
+                    <LessonsList
+                      lessons={lessons}
+                      activeIndex={activeVideoIndex}
+                      onSelectLesson={handleVideoSelect}
+                      isEnrolled={isEnrolled}
+                    />
+                  )}
+                </Stack>
+              </motion.div>
+            </Grid>
+          </Grid>
+        </Container>
+      </Layout>
+    </PageContainer>
+  );
+}
+
+// PropTypes
+VideoPlayer.propTypes = {
+  videoUrl: PropTypes.string,
+  isEnrolled: PropTypes.bool,
+  onEnroll: PropTypes.func,
+  courseTitle: PropTypes.string,
+  thumbnailUrl: PropTypes.string,
+};
+
+CourseHeader.propTypes = {
+  course: PropTypes.object,
+  isEnrolled: PropTypes.bool,
+};
+
+InstructorCard.propTypes = {
+  instructor: PropTypes.object,
+};
+
+CourseProgress.propTypes = {
+  progress: PropTypes.number,
+  currentLesson: PropTypes.number,
+  totalLessons: PropTypes.number,
+};
+
+LessonsList.propTypes = {
+  lessons: PropTypes.array,
+  activeIndex: PropTypes.number,
+  onSelectLesson: PropTypes.func,
+  isEnrolled: PropTypes.bool,
+};
+
+PurchaseCard.propTypes = {
+  course: PropTypes.object,
+  isEnrolled: PropTypes.bool,
+  onPurchase: PropTypes.func,
+  loading: PropTypes.bool,
+};

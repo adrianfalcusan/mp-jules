@@ -1,0 +1,58 @@
+{
+  error: {
+    message: 'File too large',
+    stack: 'MulterError: File too large\n' +
+      '    at abortWithCode (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:71:22)\n' +
+      '    at FileStream.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:134:11)\n' +
+      '    at FileStream.emit (node:events:519:28)\n' +
+      '    at SBMH.ssCb [as _cb] (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:479:32)\n' +
+      '    at feed (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/streamsearch/lib/sbmh.js:248:10)\n' +
+      '    at SBMH.push (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/streamsearch/lib/sbmh.js:104:16)\n' +
+      '    at Multipart._write (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:567:19)\n' +
+      '    at writeOrBuffer (node:internal/streams/writable:564:12)\n' +
+      '    at _write (node:internal/streams/writable:493:10)\n' +
+      '    at Writable.write (node:internal/streams/writable:502:10)',
+    name: 'MulterError'
+  },
+  request: {
+    method: 'POST',
+    url: '/api/bunny-upload/bunny-video',
+    ip: '::1',
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
+    userId: undefined,
+    body: [Object: null prototype] {}
+  },
+  statusCode: 500,
+  level: 'error',
+  message: 'Application Error',
+  timestamp: '2025-09-30 18:11:17'
+}
+{
+  error: {
+    message: 'File too large',
+    stack: 'MulterError: File too large\n' +
+      '    at abortWithCode (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:71:22)\n' +
+      '    at FileStream.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:134:11)\n' +
+      '    at FileStream.emit (node:events:519:28)\n' +
+      '    at SBMH.ssCb [as _cb] (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:479:32)\n' +
+      '    at feed (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/streamsearch/lib/sbmh.js:248:10)\n' +
+      '    at SBMH.push (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/streamsearch/lib/sbmh.js:104:16)\n' +
+      '    at Multipart._write (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:567:19)\n' +
+      '    at writeOrBuffer (node:internal/streams/writable:564:12)\n' +
+      '    at _write (node:internal/streams/writable:493:10)\n' +
+      '    at Writable.write (node:internal/streams/writable:502:10)',
+    name: 'MulterError'
+  },
+  request: {
+    method: 'POST',
+    url: '/api/bunny-upload/bunny-video',
+    ip: '::1',
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
+    userId: undefined,
+    body: [Object: null prototype] {}
+  },
+  statusCode: 500,
+  level: 'error',
+  message: 'Application Error',
+  timestamp: '2025-09-30 18:11:18'
+}

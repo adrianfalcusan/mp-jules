@@ -1,0 +1,55 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/.22c5f2241ea11e022303d4d66fb55ef611eb8a5f-audit.json",
+    "files": [
+        {
+            "date": 1757617516022,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-11.log",
+            "hash": "32895b73e4fa35636e590a8c0404d433c7665e926cae13342a6b6057acaa62e4"
+        },
+        {
+            "date": 1757627647474,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-12.log",
+            "hash": "e37f8a6e8eede93a79f804614ccf11068d03f531c708ed90b32d281d84fb9d8b"
+        },
+        {
+            "date": 1758315847733,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-20.log",
+            "hash": "0cfe3dae6285978fcc69624861696ad86ac7b4f0e3d624de93a6e5f171fd98b0"
+        },
+        {
+            "date": 1758569248884,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-22.log",
+            "hash": "9c1593f195e73a991231a60e7ab60247f5e4aca58fa127033df9ed1ffb125e96"
+        },
+        {
+            "date": 1758574966220,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-23.log",
+            "hash": "db33a20c02a56c14ab50b04b32c56cc6fb167074b1f314eff002aff1e15f5d6c"
+        },
+        {
+            "date": 1758987791408,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-27.log",
+            "hash": "7647b02130352d723d3ea7ea7ace3432cc3024148c9466e9ec1063a02c7c73c0"
+        },
+        {
+            "date": 1759092626833,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-28.log",
+            "hash": "5ead1145ba27c73b7c1b65253226882e960846ca34ab5b20d2abc5736f236ed6"
+        },
+        {
+            "date": 1759093540351,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-29.log",
+            "hash": "8a0371dfbf84e62f47f0d026783a1c12b46fed92c888e2ac40bc2d29b3525fa8"
+        },
+        {
+            "date": 1759239095312,
+            "name": "/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/logs/error-2025-09-30.log",
+            "hash": "74b8a324e6c1bfd922bdf7611a915d3a1aac689879fbb9decd82ead6717a77c9"
+        }
+    ],
+    "hashType": "sha256"
+}

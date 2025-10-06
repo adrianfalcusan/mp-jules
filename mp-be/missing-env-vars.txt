@@ -1,0 +1,59 @@
+# =============================================================================
+# MISSING ENVIRONMENT VARIABLES FOR LOCALHOST DEVELOPMENT
+# =============================================================================
+# Add these to your .env file:
+
+# JWT Configuration
+JWT_EXPIRES_IN=7d
+
+# SMTP Configuration  
+SMTP_SECURE=false
+
+# CORS Configuration (LOCALHOST)
+CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000,http://localhost:8080,http://127.0.0.1:8080
+
+# Rate Limiting
+RATE_LIMIT_REQUESTS=1000
+RATE_LIMIT_WINDOW=60000
+
+# Session Secret
+SESSION_SECRET=your-session-secret-change-me
+
+# Debug Mode
+DEBUG=musicloud:*
+
+# Test Database
+TEST_DB_URI=mongodb://localhost:27017/musicloud-test
+
+# Video Processing
+MAX_VIDEO_FILE_SIZE=5368709120
+ALLOWED_VIDEO_FORMATS=.mp4,.mov,.avi,.mkv,.webm
+DEFAULT_VIDEO_QUALITY=720p
+THUMBNAIL_SIZE=1280x720
+THUMBNAIL_POSITION=10%
+
+# Cost Protection
+EMERGENCY_MODE_THRESHOLD=0.95
+COST_ALERT_THRESHOLD=0.8
+FREE_TIER_DAILY_BANDWIDTH=0.5
+BASIC_TIER_DAILY_BANDWIDTH=2
+PRO_TIER_DAILY_BANDWIDTH=10
+PREMIUM_TIER_DAILY_BANDWIDTH=50
+
+# File Management
+TEMP_UPLOAD_DIR=./temp-uploads
+TEMP_FILE_MAX_AGE=7200000
+AUTO_CLEANUP_INTERVAL=3600000
+
+# Security
+BCRYPT_SALT_ROUNDS=12
+PASSWORD_MIN_LENGTH=8
+MAX_LOGIN_ATTEMPTS=5
+LOCKOUT_TIME=900000
+
+# Email Addresses
+SUPPORT_EMAIL=support@localhost
+ADMIN_EMAIL=admin@localhost
+
+# Bunny CDN Additional
+BUNNY_STORAGE_API_URL=https://storage.bunnycdn.com

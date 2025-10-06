@@ -1,0 +1,180 @@
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+      at listenInCluster (node:net:1920:12)
+      at Server.listen (node:net:2008:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:135:5)
+      at Module._compile (node:internal/modules/cjs/loader:1375:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:142:12) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1872:16)\n' +
+    '    at listenInCluster (node:net:1920:12)\n' +
+    '    at Server.listen (node:net:2008:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:135:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1375:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:142:12)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1872:16)\n' +
+    '    at listenInCluster (node:net:1920:12)\n' +
+    '    at Server.listen (node:net:2008:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:135:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1375:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:142:12)',
+  exception: true,
+  date: 'Sat Sep 27 2025 19:21:14 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 67363,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/Users/adrianfalcusan/.nvm/versions/node/v21.5.0/bin/node',
+    version: 'v21.5.0',
+    argv: [
+      '/Users/adrianfalcusan/.nvm/versions/node/v21.5.0/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 106807296,
+      heapTotal: 61472768,
+      heapUsed: 39284120,
+      external: 22182775,
+      arrayBuffers: 18318449
+    }
+  },
+  os: {
+    loadavg: [ 3.6494140625, 3.73876953125, 3.9677734375 ],
+    uptime: 16587883
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1872,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1920,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 2008,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1375,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1434,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 142,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    }
+  ],
+  timestamp: '2025-09-27 19:21:14'
+}
+{
+  error: {
+    message: 'File type not allowed',
+    stack: 'Error: File type not allowed\n' +
+      '    at fileFilter (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/routes/uploads.js:30:10)\n' +
+      '    at wrappedFileFilter (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/index.js:44:7)\n' +
+      '    at Multipart.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:107:7)\n' +
+      '    at Multipart.emit (node:events:520:28)\n' +
+      '    at HeaderParser.cb (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:358:14)\n' +
+      '    at HeaderParser.push (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:162:20)\n' +
+      '    at SBMH.ssCb [as _cb] (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:394:37)\n' +
+      '    at feed (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/streamsearch/lib/sbmh.js:219:14)\n' +
+      '    at SBMH.push (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/streamsearch/lib/sbmh.js:104:16)\n' +
+      '    at Multipart._write (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:567:19)',
+    name: 'Error'
+  },
+  request: {
+    method: 'POST',
+    url: '/api/upload/thumbnail',
+    ip: '::ffff:127.0.0.1',
+    userAgent: 'curl/7.84.0',
+    userId: undefined,
+    body: [Object: null prototype] {}
+  },
+  statusCode: 500,
+  level: 'error',
+  message: 'Application Error',
+  timestamp: '2025-09-27 19:53:31'
+}

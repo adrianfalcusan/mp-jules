@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Music Platform — Launch Audit, Plan, and Monetization Strategy
+    </title>
+    <style>
+      :root {
+        --text: #0f172a;
+        --muted: #475569;
+        --brand: #2f80ff;
+        --border: #e2e8f0;
+        --bg: #ffffff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      }
+      .container {
+        max-width: 880px;
+        margin: 32px auto;
+        padding: 0 24px 64px;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 24px;
+      }
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, var(--brand), #7aa9ff);
+      }
+      h1 {
+        font-size: 28px;
+        line-height: 1.25;
+        margin: 0;
+      }
+      h2 {
+        font-size: 20px;
+        margin-top: 28px;
+        border-top: 1px solid var(--border);
+        padding-top: 18px;
+      }
+      h3 {
+        font-size: 16px;
+        margin-top: 22px;
+        color: var(--muted);
+      }
+      p {
+        line-height: 1.6;
+        margin: 8px 0;
+        color: var(--text);
+      }
+      ul {
+        margin: 8px 0 8px 20px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      .badge {
+        display: inline-block;
+        padding: 2px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        background: #ecf2ff;
+        color: var(--brand);
+        border: 1px solid #d6e4ff;
+      }
+      .code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          monospace;
+        background: #f8fafc;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px;
+        overflow: auto;
+        font-size: 13px;
+      }
+      .section {
+        margin-bottom: 24px;
+      }
+      .kv {
+        background: #fcfcfd;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 14px;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 24px 0;
+      }
+      .small {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      @media print {
+        .container {
+          padding: 0 12px;
+        }
+        .header {
+          margin-bottom: 12px;
+        }
+        a[href]::after {
+          content: "";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>
+            Music Platform — Launch Audit, Plan, and Monetization Strategy
+          </h1>
+          <div class="small">
+            Comprehensive readiness review and go‑live plan
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Executive Summary</h2>
+        <p>
+          This audit covers current capabilities, critical launch blockers, and
+          a production-ready plan including monetization strategy, roadmap, and
+          compliance checklist.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>What Works Today</h2>
+        <ul>
+          <li>
+            <b>Auth & Accounts</b>: Login, Signup, Logout, Email Verification
+            (link + redirect), Forgot/Reset Password, role guards (<code
+              class="code"
+              >student</code
+            >, <code class="code">teacher</code>,
+            <code class="code">admin</code>).
+          </li>
+          <li>
+            <b>Content</b>: Courses and Tutorials listing/detail; S3 signed
+            URLs; local <code class="code">/uploads</code> fallback for
+            development.
+          </li>
+          <li>
+            <b>Payments</b>: Stripe Checkout session; webhook creates
+            <code class="code">Enrollment</code> + receipt email.
+          </li>
+          <li>
+            <b>Enrollment & Access</b>: Purchased content unlocked via
+            <code class="code">Enrollment</code>; protected content endpoints
+            enforce access.
+          </li>
+          <li>
+            <b>Reviews & Testimonials</b>: Unified reviews (course/tutorial) and
+            admin testimonial CRUD.
+          </li>
+          <li>
+            <b>Progress & Analytics</b>: Sessions, % and last position, streaks,
+            stats, achievements.
+          </li>
+          <li>
+            <b>Dashboards</b>: Student overview; Teacher analytics; Admin APIs
+            (users, analytics, approval, stats).
+          </li>
+          <li>
+            <b>Frontend</b>: React + MUI, protected/public routes, pages for
+            landing, catalog, detail, tutorial, auth, profile, dashboards; Axios
+            with JWT bearer.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Critical Blockers (Fix Before Launch)</h2>
+        <ol>
+          <li>
+            <b>Admin route security gaps</b>: Ensure every admin endpoint uses
+            <code class="code">auth</code> +
+            <code class="code">role(["admin"])</code>. Remove duplicates.
+          </li>
+          <li>
+            <b>Enrollment check bug</b>: In courses progress endpoint, use
+            <code class="code">{ student, itemType: "course", itemId }</code>
+            per schema.
+          </li>
+          <li>
+            <b>Webhook requirement</b>: Backend exits without
+            <code class="code">STRIPE_WEBHOOK_SECRET</code>. Provide Stripe CLI
+            secret in dev or relax check in dev mode.
+          </li>
+          <li>
+            <b>Upload placeholder missing</b>: Implement dev upload route or
+            require S3-only uploads.
+          </li>
+          <li>
+            <b>Missing refresh token</b>: Remove
+            <code class="code">AUTH.REFRESH</code> or implement
+            <code class="code">/auth/refresh</code>.
+          </li>
+          <li>
+            <b>Teacher highlights aggregation</b>: Fix to count via
+            <code class="code">Enrollment</code> with
+            <code class="code">itemType/itemId</code>.
+          </li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Quick Start (Local Development)</h2>
+        <h3>Backend <span class="badge">.env</span></h3>
+        <pre class="code">
+PORT=8080
+DB_URI=mongodb://localhost:27017/music-platform
+JWT_SECRET=change_me
+FRONTEND_URL=http://localhost:3000
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+AWS_REGION=us-east-1
+AWS_ACCESS_KEY_ID=your_aws_key
+AWS_SECRET_ACCESS_KEY=your_aws_secret
+AWS_S3_BUCKET=your-bucket
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=no-reply@example.com
+SMTP_PASS=...
+SMTP_SECURE=false
+EMAIL_FROM="Your Brand &lt;no-reply@example.com&gt;"</pre
+        >
+        <h3>Frontend <span class="badge">.env</span></h3>
+        <pre class="code">REACT_APP_API_BASE_URL=http://localhost:8080/api</pre>
+        <h3>Install & Run</h3>
+        <pre class="code">
+# Backend
+cd music-platform-backend
+npm install
+npm start
+
+# Frontend
+cd ../music-platform-frontend
+npm install
+npm start</pre
+        >
+        <h3>Stripe Webhook (test mode)</h3>
+        <pre class="code">
+stripe listen --forward-to http://localhost:8080/api/payments/webhook</pre
+        >
+        <p>
+          Copy the <code class="code">whsec_...</code> to
+          <code class="code">STRIPE_WEBHOOK_SECRET</code> and restart the
+          backend.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Production Launch Plan</h2>
+        <ul>
+          <li>
+            <b>Hosting</b>: Backend (Render/Railway/Fly/EC2, Node 18+, HTTPS),
+            DB (Atlas M10+), Storage (S3+CloudFront), Frontend (Vercel/Netlify),
+            Stripe live webhook to
+            <code class="code">/api/payments/webhook</code>.
+          </li>
+          <li>
+            <b>Security</b>: Lock admin routes, rate limit auth/payments,
+            structured logging, request IDs, Sentry, CORS whitelist, health
+            checks.
+          </li>
+          <li>
+            <b>Observability</b>: Central logs and alerts on webhook
+            failures/5xx spikes.
+          </li>
+          <li>
+            <b>Compliance</b>: Backups, Terms/Privacy/Refund/Cookies, cookie
+            notice, branded email templates.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Monetization & Pricing</h2>
+        <ul>
+          <li>
+            <b>Model</b>: One‑off purchases (current), Subscriptions (Stripe
+            Billing), Bundles/Coupons, Teacher payouts (Stripe Connect),
+            Coaching, B2B seats.
+          </li>
+          <li>
+            <b>Growth</b>: Referrals, affiliates (UTM+coupons), lifecycle email
+            (welcome/abandoned/win‑back/achievement).
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Product Roadmap</h2>
+        <h3>Pre‑launch (must‑fix)</h3>
+        <ul>
+          <li>Secure all admin endpoints; remove duplicates.</li>
+          <li>Fix course progress enrollment query.</li>
+          <li>Dev upload placeholder or enforce S3‑only.</li>
+          <li>Post‑checkout polling for enrollment.</li>
+          <li>Coupons and order history.</li>
+          <li>Remove/implement refresh tokens.</li>
+        </ul>
+        <h3>Near‑term (2–4 weeks)</h3>
+        <ul>
+          <li>Stripe Connect payouts + teacher revenue dashboard.</li>
+          <li>Subscriptions with gated access checks.</li>
+          <li>Search/filters/tags; SEO meta; sitemap/robots.</li>
+          <li>HTML email templates (verify/reset/receipt/achievements).</li>
+          <li>Admin approval UI; GA4 events.</li>
+        </ul>
+        <h3>Later (4–8 weeks)</h3>
+        <ul>
+          <li>Recommendations; community Q&A/comments; announcements.</li>
+          <li>
+            Responsive polish; HLS streaming; DRM (short‑lived
+            URLs/watermarking).
+          </li>
+          <li>Localization and multi‑currency.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Compliance & Ops Checklist</h2>
+        <ul>
+          <li>
+            Policies in footer; support email; Stripe Tax/VAT; B2B invoicing.
+          </li>
+          <li>
+            Data export/delete; DPA if required; branded emails with
+            address/unsubscribe; status page.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Risks & Mitigations</h2>
+        <ul>
+          <li>
+            Webhook dependency for unlocks → add client polling + manual
+            refresh.
+          </li>
+          <li>
+            Uploads without S3 → require S3 in prod or add dev placeholder.
+          </li>
+          <li>Admin analytics exposure → secure before go‑live.</li>
+          <li>Legacy fields (`isPublished` vs `status`) → standardize.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Next Actions (Owner‑ready)</h2>
+        <ul>
+          <li>
+            Harden <code class="code">routes/admin.js</code> and remove
+            duplicates.
+          </li>
+          <li>
+            Fix course progress query in
+            <code class="code">routes/courses.js</code>.
+          </li>
+          <li>Implement upload placeholder or enforce S3‑only.</li>
+          <li>Add frontend post‑checkout polling; optional coupons.</li>
+          <li>
+            Remove/implement refresh tokens; deploy stack (API, DB, S3/CDN, FE,
+            Stripe).
+          </li>
+          <li>Seed initial catalog and publish landing content.</li>
+        </ul>
+      </div>
+
+      <hr />
+      <p class="small">
+        Tip: To export as PDF, open this file in your browser and use “File →
+        Print → Save as PDF”.
+      </p>
+    </div>
+  </body>
+</html>

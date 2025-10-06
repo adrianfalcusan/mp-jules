@@ -1,0 +1,360 @@
+{
+  error: {
+    message: 'File too large',
+    stack: 'MulterError: File too large\n' +
+      '    at abortWithCode (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:71:22)\n' +
+      '    at FileStream.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:134:11)\n' +
+      '    at FileStream.emit (node:events:519:28)\n' +
+      '    at SBMH.ssCb [as _cb] (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:479:32)\n' +
+      '    at feed (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/streamsearch/lib/sbmh.js:248:10)\n' +
+      '    at SBMH.push (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/streamsearch/lib/sbmh.js:104:16)\n' +
+      '    at Multipart._write (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/busboy/lib/types/multipart.js:567:19)\n' +
+      '    at writeOrBuffer (node:internal/streams/writable:564:12)\n' +
+      '    at _write (node:internal/streams/writable:493:10)\n' +
+      '    at Writable.write (node:internal/streams/writable:502:10)',
+    name: 'MulterError'
+  },
+  request: {
+    method: 'POST',
+    url: '/api/upload/video',
+    ip: '::1',
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36',
+    userId: undefined,
+    body: [Object: null prototype] {}
+  },
+  statusCode: 500,
+  level: 'error',
+  message: 'Application Error',
+  timestamp: '2025-09-29 00:05:40'
+}
+{
+  code: 'ERR_INVALID_ARG_VALUE',
+  level: 'error',
+  message: "Bunny CDN upload error: The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received <Buffer ff d8 ff e0 00 10 4a 46 49 46 00 01 02 00 00 01 00 01 00 00 ff ed 00 9c 50 68 6f 74 6f 73 68 6f 70 20 33 2e 30 00 38 42 ...",
+  stack: "TypeError [ERR_INVALID_ARG_VALUE]: The argument 'path' must be a string, Uint8Array, or URL without null bytes. Received <Buffer ff d8 ff e0 00 10 4a 46 49 46 00 01 02 00 00 01 00 01 00 00 ff ed 00 9c 50 68 6f 74 6f 73 68 6f 70 20 33 2e 30 00 38 42 ...\n" +
+    '    at Object.openSync (node:fs:579:10)\n' +
+    '    at Object.readFileSync (node:fs:457:35)\n' +
+    '    at BunnyCDNService.uploadFile (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:23:29)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/routes/bunny-uploads.js:137:41\n' +
+    '    at Layer.handle [as handle_request] (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at done (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:45:7)\n' +
+    '    at indicateDone (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:49:68)\n' +
+    '    at Multipart.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/multer/lib/make-middleware.js:166:7)\n' +
+    '    at Multipart.emit (node:events:519:28)',
+  timestamp: '2025-09-29 00:37:51'
+}
+{
+  error: /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:60
+    async uploadBuffer(fileBuffer, fileName, folder = "") {
+          ^^^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'uploadBuffer'
+      at internalCompileFunction (node:internal/vm:77:18)
+      at wrapSafe (node:internal/modules/cjs/loader:1287:20)
+      at Module._compile (node:internal/modules/cjs/loader:1339:27)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Module.require (node:internal/modules/cjs/loader:1234:19)
+      at require (node:internal/modules/helpers:176:18)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/middlewares/uploadVideoBunny.js:5:25)
+      at Module._compile (node:internal/modules/cjs/loader:1375:14),
+  level: 'error',
+  message: "uncaughtException: Unexpected identifier 'uploadBuffer'\n" +
+    '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:60\n' +
+    '  async uploadBuffer(fileBuffer, fileName, folder = "") {\n' +
+    '        ^^^^^^^^^^^^\n' +
+    '\n' +
+    "SyntaxError: Unexpected identifier 'uploadBuffer'\n" +
+    '    at internalCompileFunction (node:internal/vm:77:18)\n' +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1287:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1339:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1234:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/middlewares/uploadVideoBunny.js:5:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1375:14)',
+  stack: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:60\n' +
+    '  async uploadBuffer(fileBuffer, fileName, folder = "") {\n' +
+    '        ^^^^^^^^^^^^\n' +
+    '\n' +
+    "SyntaxError: Unexpected identifier 'uploadBuffer'\n" +
+    '    at internalCompileFunction (node:internal/vm:77:18)\n' +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1287:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1339:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1234:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/middlewares/uploadVideoBunny.js:5:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1375:14)',
+  exception: true,
+  date: 'Mon Sep 29 2025 00:39:20 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 2639,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/Users/adrianfalcusan/.nvm/versions/node/v21.5.0/bin/node',
+    version: 'v21.5.0',
+    argv: [
+      '/Users/adrianfalcusan/.nvm/versions/node/v21.5.0/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 90931200,
+      heapTotal: 58376192,
+      heapUsed: 28117616,
+      external: 20549709,
+      arrayBuffers: 18262279
+    }
+  },
+  os: {
+    loadavg: [ 4.8857421875, 4.25732421875, 3.916015625 ],
+    uptime: 16693369
+  },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/vm',
+      function: 'internalCompileFunction',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1287,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1339,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1434,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1234,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 176,
+      method: null,
+      native: false
+    },
+    {
+      column: 25,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/middlewares/uploadVideoBunny.js',
+      function: null,
+      line: 5,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1375,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2025-09-29 00:39:20'
+}
+{
+  error: /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:60
+    async uploadBuffer(fileBuffer, fileName, folder = "") {
+          ^^^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'uploadBuffer'
+      at internalCompileFunction (node:internal/vm:77:18)
+      at wrapSafe (node:internal/modules/cjs/loader:1287:20)
+      at Module._compile (node:internal/modules/cjs/loader:1339:27)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Module.require (node:internal/modules/cjs/loader:1234:19)
+      at require (node:internal/modules/helpers:176:18)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/middlewares/uploadVideoBunny.js:5:25)
+      at Module._compile (node:internal/modules/cjs/loader:1375:14),
+  level: 'error',
+  message: "uncaughtException: Unexpected identifier 'uploadBuffer'\n" +
+    '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:60\n' +
+    '  async uploadBuffer(fileBuffer, fileName, folder = "") {\n' +
+    '        ^^^^^^^^^^^^\n' +
+    '\n' +
+    "SyntaxError: Unexpected identifier 'uploadBuffer'\n" +
+    '    at internalCompileFunction (node:internal/vm:77:18)\n' +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1287:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1339:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1234:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/middlewares/uploadVideoBunny.js:5:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1375:14)',
+  stack: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:60\n' +
+    '  async uploadBuffer(fileBuffer, fileName, folder = "") {\n' +
+    '        ^^^^^^^^^^^^\n' +
+    '\n' +
+    "SyntaxError: Unexpected identifier 'uploadBuffer'\n" +
+    '    at internalCompileFunction (node:internal/vm:77:18)\n' +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1287:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1339:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1434:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1234:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/middlewares/uploadVideoBunny.js:5:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1375:14)',
+  exception: true,
+  date: 'Mon Sep 29 2025 00:39:38 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 2681,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/Users/adrianfalcusan/.nvm/versions/node/v21.5.0/bin/node',
+    version: 'v21.5.0',
+    argv: [
+      '/Users/adrianfalcusan/.nvm/versions/node/v21.5.0/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 90849280,
+      heapTotal: 58376192,
+      heapUsed: 28040320,
+      external: 20549709,
+      arrayBuffers: 18262279
+    }
+  },
+  os: {
+    loadavg: [ 5.27392578125, 4.373046875, 3.96435546875 ],
+    uptime: 16693387
+  },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/vm',
+      function: 'internalCompileFunction',
+      line: 77,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1287,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1339,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1434,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1234,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 176,
+      method: null,
+      native: false
+    },
+    {
+      column: 25,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/middlewares/uploadVideoBunny.js',
+      function: null,
+      line: 5,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1375,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2025-09-29 00:39:38'
+}

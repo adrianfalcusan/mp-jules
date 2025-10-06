@@ -1,0 +1,2847 @@
+{
+  missing: [
+    'BUNNY_API_KEY',
+    'BUNNY_STORAGE_ZONE_NAME',
+    'BUNNY_STORAGE_PASSWORD',
+    'BUNNY_PULL_ZONE_URL'
+  ],
+  note: 'Please check your .env file',
+  level: 'error',
+  message: 'Missing required Bunny CDN environment variables:',
+  timestamp: '2025-09-11 22:05:16'
+}
+{
+  error: Error: Missing Bunny CDN configuration: BUNNY_API_KEY, BUNNY_STORAGE_ZONE_NAME, BUNNY_STORAGE_PASSWORD, BUNNY_PULL_ZONE_URL
+      at BunnyCDNConfig.validateConfig (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:61:13)
+      at new BunnyCDNConfig (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:43:10)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:183:18)
+      at Module._compile (node:internal/modules/cjs/loader:1521:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+      at Module.load (node:internal/modules/cjs/loader:1266:32)
+      at Module._load (node:internal/modules/cjs/loader:1091:12)
+      at Module.require (node:internal/modules/cjs/loader:1289:19)
+      at require (node:internal/modules/helpers:182:18)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:8:24),
+  level: 'error',
+  message: 'uncaughtException: Missing Bunny CDN configuration: BUNNY_API_KEY, BUNNY_STORAGE_ZONE_NAME, BUNNY_STORAGE_PASSWORD, BUNNY_PULL_ZONE_URL\n' +
+    'Error: Missing Bunny CDN configuration: BUNNY_API_KEY, BUNNY_STORAGE_ZONE_NAME, BUNNY_STORAGE_PASSWORD, BUNNY_PULL_ZONE_URL\n' +
+    '    at BunnyCDNConfig.validateConfig (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:61:13)\n' +
+    '    at new BunnyCDNConfig (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:43:10)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:183:18)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1521:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1266:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1091:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1289:19)\n' +
+    '    at require (node:internal/modules/helpers:182:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:8:24)',
+  stack: 'Error: Missing Bunny CDN configuration: BUNNY_API_KEY, BUNNY_STORAGE_ZONE_NAME, BUNNY_STORAGE_PASSWORD, BUNNY_PULL_ZONE_URL\n' +
+    '    at BunnyCDNConfig.validateConfig (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:61:13)\n' +
+    '    at new BunnyCDNConfig (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:43:10)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js:183:18)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1521:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1266:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1091:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1289:19)\n' +
+    '    at require (node:internal/modules/helpers:182:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js:8:24)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:05:16 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 19501,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/Users/adrianfalcusan/.nvm/versions/node/v20.19.5/bin/node',
+    version: 'v20.19.5',
+    argv: [
+      '/Users/adrianfalcusan/.nvm/versions/node/v20.19.5/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/scripts/test-bunny-upload.js'
+    ],
+    memoryUsage: {
+      rss: 66404352,
+      heapTotal: 19333120,
+      heapUsed: 12556928,
+      external: 3215950,
+      arrayBuffers: 65708
+    }
+  },
+  os: {
+    loadavg: [ 3.08740234375, 2.8349609375, 2.68408203125 ],
+    uptime: 15215308
+  },
+  trace: [
+    {
+      column: 13,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js',
+      function: 'BunnyCDNConfig.validateConfig',
+      line: 61,
+      method: 'validateConfig',
+      native: false
+    },
+    {
+      column: 10,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js',
+      function: 'new BunnyCDNConfig',
+      line: 43,
+      method: null,
+      native: false
+    },
+    {
+      column: 18,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/config/bunny.js',
+      function: null,
+      line: 183,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1521,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1623,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1266,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1091,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1289,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 182,
+      method: null,
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/services/bunnycdn.service.js',
+      function: null,
+      line: 8,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:05:16'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:14:29 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 19949,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 124125184,
+      heapTotal: 75153408,
+      heapUsed: 41368776,
+      external: 19517997,
+      arrayBuffers: 18361899
+    }
+  },
+  os: {
+    loadavg: [ 4.017578125, 3.37548828125, 3.02197265625 ],
+    uptime: 15215861
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:14:29'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:15:06 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 19984,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 125222912,
+      heapTotal: 75153408,
+      heapUsed: 40410256,
+      external: 27056821,
+      arrayBuffers: 18339018
+    }
+  },
+  os: {
+    loadavg: [ 4.17138671875, 3.5107421875, 3.0869140625 ],
+    uptime: 15215898
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:15:06'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:15:43 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20026,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 125501440,
+      heapTotal: 75415552,
+      heapUsed: 41419200,
+      external: 19501005,
+      arrayBuffers: 18361258
+    }
+  },
+  os: {
+    loadavg: [ 3.93701171875, 3.517578125, 3.1044921875 ],
+    uptime: 15215935
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:15:43'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:15:44 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20041,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 123486208,
+      heapTotal: 75153408,
+      heapUsed: 40451232,
+      external: 27025267,
+      arrayBuffers: 18338434
+    }
+  },
+  os: {
+    loadavg: [ 3.93701171875, 3.517578125, 3.1044921875 ],
+    uptime: 15215936
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:15:44'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:16:26 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20104,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 125222912,
+      heapTotal: 75677696,
+      heapUsed: 40394232,
+      external: 27052618,
+      arrayBuffers: 18339018
+    }
+  },
+  os: {
+    loadavg: [ 3.462890625, 3.44482421875, 3.09619140625 ],
+    uptime: 15215978
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:16:26'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:16:58 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20138,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 126189568,
+      heapTotal: 75415552,
+      heapUsed: 40504968,
+      external: 25204826,
+      arrayBuffers: 18339018
+    }
+  },
+  os: {
+    loadavg: [ 2.79638671875, 3.2880859375, 3.05078125 ],
+    uptime: 15216010
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:16:58'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:17:00 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20154,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 126369792,
+      heapTotal: 75415552,
+      heapUsed: 41191744,
+      external: 19516731,
+      arrayBuffers: 18360633
+    }
+  },
+  os: {
+    loadavg: [ 2.79638671875, 3.2880859375, 3.05078125 ],
+    uptime: 15216012
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:17:00'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:17:18 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20177,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 118423552,
+      heapTotal: 72531968,
+      heapUsed: 46834824,
+      external: 27498542,
+      arrayBuffers: 19481894
+    }
+  },
+  os: {
+    loadavg: [ 2.6943359375, 3.2353515625, 3.037109375 ],
+    uptime: 15216030
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:17:18'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:17:19 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20192,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 125255680,
+      heapTotal: 75153408,
+      heapUsed: 40518800,
+      external: 27025851,
+      arrayBuffers: 18339018
+    }
+  },
+  os: {
+    loadavg: [ 2.6943359375, 3.2353515625, 3.037109375 ],
+    uptime: 15216031
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:17:19'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:17:44 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20217,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 120635392,
+      heapTotal: 73056256,
+      heapUsed: 45039376,
+      external: 28633413,
+      arrayBuffers: 19022026
+    }
+  },
+  os: {
+    loadavg: [ 2.81884765625, 3.2158203125, 3.03466796875 ],
+    uptime: 15216056
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:17:44'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:17:53 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20239,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 126337024,
+      heapTotal: 75939840,
+      heapUsed: 40541424,
+      external: 27066656,
+      arrayBuffers: 18339018
+    }
+  },
+  os: { loadavg: [ 3.140625, 3.2734375, 3.05712890625 ], uptime: 15216065 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:17:53'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:17:55 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20252,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 125698048,
+      heapTotal: 74891264,
+      heapUsed: 40501280,
+      external: 27066656,
+      arrayBuffers: 18339018
+    }
+  },
+  os: { loadavg: [ 3.140625, 3.2734375, 3.05712890625 ], uptime: 15216067 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:17:55'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:18:22 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20278,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 123912192,
+      heapTotal: 75677696,
+      heapUsed: 41849832,
+      external: 19440472,
+      arrayBuffers: 18367792
+    }
+  },
+  os: {
+    loadavg: [ 3.927734375, 3.46484375, 3.1337890625 ],
+    uptime: 15216094
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:18:22'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:18:23 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20293,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 97271808,
+      heapTotal: 74104832,
+      heapUsed: 43758160,
+      external: 20027903,
+      arrayBuffers: 18814551
+    }
+  },
+  os: {
+    loadavg: [ 3.927734375, 3.46484375, 3.1337890625 ],
+    uptime: 15216095
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:18:23'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:18:42 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20313,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 123977728,
+      heapTotal: 75153408,
+      heapUsed: 40499024,
+      external: 27066656,
+      arrayBuffers: 18339018
+    }
+  },
+  os: { loadavg: [ 3.875, 3.482421875, 3.1474609375 ], uptime: 15216114 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:18:42'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:18:43 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20328,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 123731968,
+      heapTotal: 75153408,
+      heapUsed: 41493520,
+      external: 28633413,
+      arrayBuffers: 18360633
+    }
+  },
+  os: { loadavg: [ 3.875, 3.482421875, 3.1474609375 ], uptime: 15216115 },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:18:43'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:19:47 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20389,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 124878848,
+      heapTotal: 75153408,
+      heapUsed: 41269208,
+      external: 19486402,
+      arrayBuffers: 18361274
+    }
+  },
+  os: {
+    loadavg: [ 3.59423828125, 3.42822265625, 3.146484375 ],
+    uptime: 15216179
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:19:47'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 22:19:50 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 20406,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 124993536,
+      heapTotal: 74891264,
+      heapUsed: 41214096,
+      external: 19508539,
+      arrayBuffers: 18360633
+    }
+  },
+  os: {
+    loadavg: [ 3.59423828125, 3.42822265625, 3.146484375 ],
+    uptime: 15216182
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 22:19:50'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+      at listenInCluster (node:net:1920:12)
+      at Server.listen (node:net:2008:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1872:16)\n' +
+    '    at listenInCluster (node:net:1920:12)\n' +
+    '    at Server.listen (node:net:2008:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1872:16)\n' +
+    '    at listenInCluster (node:net:1920:12)\n' +
+    '    at Server.listen (node:net:2008:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 23:05:51 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 21815,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/Users/adrianfalcusan/.nvm/versions/node/v21.5.0/bin/node',
+    version: 'v21.5.0',
+    argv: [
+      '/Users/adrianfalcusan/.nvm/versions/node/v21.5.0/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 120717312,
+      heapTotal: 72957952,
+      heapUsed: 37022608,
+      external: 20918222,
+      arrayBuffers: 18314183
+    }
+  },
+  os: {
+    loadavg: [ 2.462890625, 3.24609375, 3.0595703125 ],
+    uptime: 15218943
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1872,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1920,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 2008,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'process.processTicksAndRejections',
+      line: 95,
+      method: 'processTicksAndRejections',
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 23:05:51'
+}
+{
+  error: Error: listen EADDRINUSE: address already in use :::8080
+      at Server.setupListenHandle [as _listen2] (node:net:1330:16)
+      at listenInCluster (node:net:1378:12)
+      at Server.listen (node:net:1465:7)
+      at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)
+      at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9
+      at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+    code: 'EADDRINUSE',
+    errno: -48,
+    syscall: 'listen',
+    address: '::',
+    port: 8080
+  },
+  level: 'error',
+  message: 'uncaughtException: listen EADDRINUSE: address already in use :::8080\n' +
+    'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  stack: 'Error: listen EADDRINUSE: address already in use :::8080\n' +
+    '    at Server.setupListenHandle [as _listen2] (node:net:1330:16)\n' +
+    '    at listenInCluster (node:net:1378:12)\n' +
+    '    at Server.listen (node:net:1465:7)\n' +
+    '    at Function.listen (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:635:24)\n' +
+    '    at /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:123:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:96:5)',
+  exception: true,
+  date: 'Thu Sep 11 2025 23:19:34 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 22371,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 115851264,
+      heapTotal: 73842688,
+      heapUsed: 38118952,
+      external: 19669661,
+      arrayBuffers: 18339032
+    }
+  },
+  os: {
+    loadavg: [ 3.1669921875, 6.65478515625, 6.7607421875 ],
+    uptime: 15219766
+  },
+  trace: [
+    {
+      column: 16,
+      file: 'node:net',
+      function: 'Server.setupListenHandle [as _listen2]',
+      line: 1330,
+      method: 'setupListenHandle [as _listen2]',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:net',
+      function: 'listenInCluster',
+      line: 1378,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:net',
+      function: 'Server.listen',
+      line: 1465,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 24,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.listen',
+      line: 635,
+      method: 'listen',
+      native: false
+    },
+    {
+      column: 9,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 123,
+      method: null,
+      native: false
+    },
+    {
+      column: 5,
+      file: 'node:internal/process/task_queues',
+      function: 'processTicksAndRejections',
+      line: 96,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 23:19:34'
+}
+{
+  error: Error: Cannot find module './utils/initializeAchievements'
+  Require stack:
+  - /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js
+      at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+      at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+      at Module.require (node:internal/modules/cjs/loader:1005:19)
+      at require (node:internal/modules/cjs/helpers:102:18)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:31:32)
+      at Module._compile (node:internal/modules/cjs/loader:1103:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+      at Module.load (node:internal/modules/cjs/loader:981:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './utils/initializeAchievements'\n" +
+    'Require stack:\n' +
+    '- /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js\n' +
+    "Error: Cannot find module './utils/initializeAchievements'\n" +
+    'Require stack:\n' +
+    '- /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js\n' +
+    '    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:778:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1005:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:102:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:31:32)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)',
+  stack: "Error: Cannot find module './utils/initializeAchievements'\n" +
+    'Require stack:\n' +
+    '- /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js\n' +
+    '    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:778:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1005:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:102:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:31:32)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)',
+  exception: true,
+  date: 'Thu Sep 11 2025 23:23:53 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 22802,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 107479040,
+      heapTotal: 64929792,
+      heapUsed: 43917120,
+      external: 27742977,
+      arrayBuffers: 18913644
+    }
+  },
+  os: {
+    loadavg: [ 8.5693359375, 7.16162109375, 6.826171875 ],
+    uptime: 15220025
+  },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._resolveFilename',
+      line: 933,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 778,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1005,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/helpers',
+      function: 'require',
+      line: 102,
+      method: null,
+      native: false
+    },
+    {
+      column: 32,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1103,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1155,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 981,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 822,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 77,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 23:23:53'
+}
+{
+  error: Error: Cannot find module './utils/initializeAchievements'
+  Require stack:
+  - /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js
+      at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+      at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+      at Module.require (node:internal/modules/cjs/loader:1005:19)
+      at require (node:internal/modules/cjs/helpers:102:18)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:31:32)
+      at Module._compile (node:internal/modules/cjs/loader:1103:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+      at Module.load (node:internal/modules/cjs/loader:981:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './utils/initializeAchievements'\n" +
+    'Require stack:\n' +
+    '- /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js\n' +
+    "Error: Cannot find module './utils/initializeAchievements'\n" +
+    'Require stack:\n' +
+    '- /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js\n' +
+    '    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:778:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1005:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:102:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:31:32)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)',
+  stack: "Error: Cannot find module './utils/initializeAchievements'\n" +
+    'Require stack:\n' +
+    '- /Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js\n' +
+    '    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:778:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1005:19)\n' +
+    '    at require (node:internal/modules/cjs/helpers:102:18)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:31:32)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)',
+  exception: true,
+  date: 'Thu Sep 11 2025 23:24:09 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 22838,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 109084672,
+      heapTotal: 64929792,
+      heapUsed: 43665376,
+      external: 27742977,
+      arrayBuffers: 18931140
+    }
+  },
+  os: {
+    loadavg: [ 7.4033203125, 6.97314453125, 6.7646484375 ],
+    uptime: 15220041
+  },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._resolveFilename',
+      line: 933,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 778,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1005,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/cjs/helpers',
+      function: 'require',
+      line: 102,
+      method: null,
+      native: false
+    },
+    {
+      column: 32,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 31,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1103,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1155,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 981,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 822,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 77,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 23:24:09'
+}
+{
+  error: TypeError: app.use() requires a middleware function
+      at Function.use (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:217:11)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:116:5)
+      at Module._compile (node:internal/modules/cjs/loader:1103:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+      at Module.load (node:internal/modules/cjs/loader:981:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+      at node:internal/main/run_main_module:17:47,
+  level: 'error',
+  message: 'uncaughtException: app.use() requires a middleware function\n' +
+    'TypeError: app.use() requires a middleware function\n' +
+    '    at Function.use (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:217:11)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:116:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  stack: 'TypeError: app.use() requires a middleware function\n' +
+    '    at Function.use (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:217:11)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:116:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  exception: true,
+  date: 'Thu Sep 11 2025 23:24:35 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 22878,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 107855872,
+      heapTotal: 64929792,
+      heapUsed: 43627904,
+      external: 27742977,
+      arrayBuffers: 18969670
+    }
+  },
+  os: {
+    loadavg: [ 7.31298828125, 6.96484375, 6.76611328125 ],
+    uptime: 15220067
+  },
+  trace: [
+    {
+      column: 11,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.use',
+      line: 217,
+      method: 'use',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 116,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1103,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1155,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 981,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 822,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 77,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 23:24:35'
+}
+{
+  error: TypeError: app.use() requires a middleware function
+      at Function.use (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:217:11)
+      at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:116:5)
+      at Module._compile (node:internal/modules/cjs/loader:1103:14)
+      at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)
+      at Module.load (node:internal/modules/cjs/loader:981:32)
+      at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+      at node:internal/main/run_main_module:17:47,
+  level: 'error',
+  message: 'uncaughtException: app.use() requires a middleware function\n' +
+    'TypeError: app.use() requires a middleware function\n' +
+    '    at Function.use (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:217:11)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:116:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  stack: 'TypeError: app.use() requires a middleware function\n' +
+    '    at Function.use (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js:217:11)\n' +
+    '    at Object.<anonymous> (/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js:116:5)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n' +
+    '    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1155:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:981:32)\n' +
+    '    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n' +
+    '    at node:internal/main/run_main_module:17:47',
+  exception: true,
+  date: 'Thu Sep 11 2025 23:24:50 GMT+0300 (Eastern European Summer Time)',
+  process: {
+    pid: 22917,
+    uid: 501,
+    gid: 20,
+    cwd: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend',
+    execPath: '/usr/local/bin/node',
+    version: 'v16.14.0',
+    argv: [
+      '/usr/local/bin/node',
+      '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js'
+    ],
+    memoryUsage: {
+      rss: 107167744,
+      heapTotal: 64929792,
+      heapUsed: 43774624,
+      external: 27742977,
+      arrayBuffers: 18909411
+    }
+  },
+  os: {
+    loadavg: [ 6.85009765625, 6.8701171875, 6.73486328125 ],
+    uptime: 15220082
+  },
+  trace: [
+    {
+      column: 11,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/node_modules/express/lib/application.js',
+      function: 'Function.use',
+      line: 217,
+      method: 'use',
+      native: false
+    },
+    {
+      column: 5,
+      file: '/Users/adrianfalcusan/Projects/AF-Works/music-platform-backend/index.js',
+      function: null,
+      line: 116,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1103,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1155,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 981,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 822,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 77,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 47,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2025-09-11 23:24:50'
+}

@@ -1,0 +1,7 @@
+// Add new route imports after line 40
+const streamlinedContentRoutes = require('./routes/streamlined-content');
+const adminApprovalRoutes = require('./routes/admin-approval');
+
+// Add route registration after webhooks
+app.use('/api/content', streamlinedContentRoutes);
+app.use('/api/admin/approval', adminApprovalRoutes);

@@ -1,0 +1,7 @@
+npm ERR! Missing script: "test"
+npm ERR! 
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/adrianfalcusan/.npm/_logs/2025-07-19T12_47_38_443Z-debug-0.log
