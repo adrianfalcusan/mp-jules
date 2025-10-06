@@ -1,3 +1,11 @@
 ./node_modules
 node_modules
 .env*
+logs/
+*.log
+*.log.gz
+*.backup
+temp_*.txt
+temp_response.json
+test-file.txt
+test-results.txt

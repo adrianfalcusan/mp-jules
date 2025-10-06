@@ -33,7 +33,6 @@ const courseRoutes = require("./routes/courses");
 const tutorialRoutes = require("./routes/tutorials");
 const streamlinedContentRoutes = require("./routes/streamlined-content");
 const adminApprovalRoutes = require("./routes/admin-approval");
-const videoProxyRoutes = require("./routes/video-proxy");
 const reviewRoutes = require("./routes/reviews");
 const progressRoutes = require("./routes/progress");
 const achievementRoutes = require("./routes/achievements");
@@ -93,7 +92,6 @@ app.use("/api/bunny-upload", bunnyUploadsRoutes);
 // New streamlined routes
 app.use("/api/content", streamlinedContentRoutes);
 app.use("/api/admin/approval", adminApprovalRoutes);
-// app.use("/api/video", videoProxyRoutes); // disabled; use signed URLs
 
 // Health check endpoint
 app.get("/health", (req, res) => {

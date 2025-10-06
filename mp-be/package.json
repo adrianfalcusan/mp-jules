@@ -9,9 +9,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:bunny": "node scripts/test-bunny-upload.js",
-    "test:video": "node scripts/test-video-upload.js",
-    "setup:test": "node scripts/setup-test-data.js"
+    "setup:test": "node scripts/setup-test-data.js",
+    "cleanup": "node scripts/cleanup-backend.js",
+    "cleanup:apply": "node scripts/cleanup-backend.js --apply"
   },
   "keywords": [],
   "author": "Your Name",
